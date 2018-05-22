@@ -1,4 +1,4 @@
-\documentclass[AcMaster]{BJTU-thesis}
+\documentclass[Doctor]{BJTU-thesis}
 %%%%%%%%%%%%%%%填写封面信息%%%%%%%%%%%%%%%%%%%%
 \author{鞠楠}
 \studentNumber{16121248}
@@ -12,19 +12,29 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\setmainfont{Times New Roman}
 
+\makeindex
 \begin{document}
-	\makecover
-	\makeAuthorization
-	\makeInfo
-	\include{chapters/thanks}
-	\include{chapters/abstract}
-	\include{chapters/englishabstract}
-	\tableofcontents
-	\newpage\pagenumbering{arabic}
-	\chapter{引言}
-	这里是引言\upcite{MATSUMURA2017566,BHATTACHARYYA2010538}。
-	\chapter{研究背景}
-	这里是研究背景。
-	\nocite{*}
-	\bibliography{reference/ref.bib}
+\makecover
+\makeAuthorization
+\makeInfo
+\include{chapters/thanks}
+\include{chapters/abstract}
+\include{chapters/englishabstract}
+\include{chapters/preface}
+\tableofcontents
+\newpage\pagenumbering{arabic}
+%% 引言
+\include{chapters/chap1}
+\include{chapters/chap2}
+%% 附录
+\appendix
+\include{chapters/appendix}	
+%% 索引
+\printindex
+\include{chapters/research}
+%% 独创性声明	
+\include{chapters/declaration}
+%%　学位论文数据集
+\include{chapters/dataset}
+
 \end{document}

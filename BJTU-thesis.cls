@@ -176,7 +176,11 @@
 \newcommand{\keywords}[1]{\textbf{关键词：}#1}
 \newcommand{\englishkeywords}[1]{\textbf{KEYWORDS:~}#1}
 
-
+\newenvironment{preface}{
+	\chapter*{序言}
+	\markboth{序言}{序言}
+	\addcontentsline{toc}{chapter}{序言}
+}{}
 
 %%定义正文的页眉页脚格式
 \def\BJTU@chapter{}
@@ -219,7 +223,7 @@ headheight=15pt
 
 %% 设置一级章节格式
 \ctexset{section={
-		format={\raggedright \bfseries \sffamily \zihao{4}},
+		format={\raggedright \bfseries \sffamily \zihao{-3}},
 		beforeskip = 28bp plus 1ex minus .2ex,
 		afterskip = 24bp plus .2ex,
 		fixskip = true,
@@ -231,7 +235,7 @@ headheight=15pt
 %黑体小四加粗顶左，单倍行距，序号与题目间空一个汉字符
 
 \ctexset{subsection={
-		format = {\bfseries \sffamily \raggedright \zihao{-4}},
+		format = {\bfseries \sffamily \raggedright \zihao{4}},
 		beforeskip =28bp plus 1ex minus .2ex,
 		afterskip = 24bp plus .2ex,
 		fixskip = true,
@@ -472,7 +476,31 @@ headheight=15pt
 	{\@latex@warning{Empty `thebibliography' environment}}%
 	\endlist}
 
+\RequirePackage{multirow}
+\RequirePackage{booktabs}
+\RequirePackage{makeidx}
+%索引环境
 
+\renewenvironment{theindex}
+{\addcontentsline{toc}{chapter}{索引}
+\if@twocolumn
+	\@restonecolfalse
+	\else
+	\@restonecoltrue
+	\fi
+	\twocolumn[\@makeschapterhead{\indexname}]%
+	\@mkboth{\MakeUppercase\indexname}%
+	{\MakeUppercase\indexname}%
+	\thispagestyle{BJTU@heading}\parindent\z@
+	\parskip\z@ \@plus .3\p@\relax
+	\columnseprule \z@
+	\columnsep 35\p@
+	\let\item\@idxitem}
+{\if@restonecol\onecolumn\else\clearpage\fi}
+\renewcommand\@idxitem{\par\hangindent 40\p@}
+\renewcommand\subitem{\@idxitem \hspace*{20\p@}}
+\renewcommand\subsubitem{\@idxitem \hspace*{30\p@}}
+\renewcommand\indexspace{\par \vskip 10\p@ \@plus5\p@ \@minus3\p@\relax}
 
 
 
