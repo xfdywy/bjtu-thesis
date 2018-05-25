@@ -1,0 +1,11 @@
+headings_flag 0
+heading_prefix "{\\large\\sffamily\\bfseries "
+heading_suffix "}\\nopagebreak\n"
+symhead_positive "Symbols"
+symhead_negative "symbols"
+numhead_positive "Numbers"
+numhead_negative "numbers"
+item_0 "\n \\item \\ttfamily "
+delim_0 " \\dotfill "
+delim_1 " \\dotfill "
+delim_2 " \\dotfill "

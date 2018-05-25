@@ -1,19 +1,23 @@
 \documentclass[Doctor]{BJTU-thesis}
 %%%%%%%%%%%%%%%填写封面信息%%%%%%%%%%%%%%%%%%%%
-\author{鞠楠}
-\studentNumber{16121248}
-\advisor{蔡永林}
+\author{赵烟桥}
+\studentNumber{11112065}
+\advisor{谭久彬}
 \advisorTitle{教授}
-\degreeType{学术型}
+\degreeType{工科}
 \major{机械制造}
-\researchArea{切削力分析}
-\title{基于切削力分析的叶片加工刀具轨迹规划}
-\englishtitle{The Path Planning of Blade Machining Tool Based on Cutting Force Analysis.}
+\researchArea{多媒体信息处理}
+\title{基于动态光学传递函数的随机运动模糊图像快速复原方法}
+\englishtitle{FAST RESTORATION METHOD FOR RANDOM MOTION-BLURRED IMAGE BASED ON DYNAMIC OPTICAL TRANSFER FUNCTION}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\setmainfont{Times New Roman}
 
-\makeindex
+%\makeindex
+\makeindex[name=class,options=-s mystyle,title=分类索引,columns=2]
+\makeindex[name=author,options=-s mystyle,title=著者索引,columns=2]
+\makeindex[name=keyword,options=-s mystyle,title=关键词索引,columns=2]
 \begin{document}
+	
 \makecover
 \makeAuthorization
 \makeInfo
@@ -30,7 +34,15 @@
 \appendix
 \include{chapters/appendix}	
 %% 索引
-\printindex
+\chapter*{索引}
+\pagestyle{fancy}
+\addcontentsline{toc}{chapter}{索引}
+\printindex[class]
+\addcontentsline{toc}{section}{分类索引}
+\printindex[author]
+\addcontentsline{toc}{section}{著者索引}
+\printindex[keyword]
+\addcontentsline{toc}{section}{关键词索引}
 \include{chapters/research}
 %% 独创性声明	
 \include{chapters/declaration}

@@ -213,17 +213,17 @@ headheight=15pt
 \ctexset{chapter={
 		name={},
 		number = {\arabic{chapter}},
-		format = {\heiti \centering \zihao{3}},
+		format = {\sffamily \centering \zihao{3}},
 		pagestyle = {BJTU@heading},
 		beforeskip = 28bp,
-		afterskip = 20bp,
+		afterskip = 24bp,
 		fixskip = true,
 	}
 }
 
 %% 设置一级章节格式
 \ctexset{section={
-		format={\raggedright \bfseries \sffamily \zihao{-3}},
+		format={\raggedright \sffamily \zihao{-3}},
 		beforeskip = 28bp plus 1ex minus .2ex,
 		afterskip = 24bp plus .2ex,
 		fixskip = true,
@@ -232,10 +232,10 @@ headheight=15pt
 
 % 设置二级标题格式
 
-%黑体小四加粗顶左，单倍行距，序号与题目间空一个汉字符
+%黑体四号顶左，单倍行距，序号与题目间空一个汉字符
 
 \ctexset{subsection={
-		format = {\bfseries \sffamily \raggedright \zihao{4}},
+		format = {\sffamily \raggedright \zihao{4}},
 		beforeskip =28bp plus 1ex minus .2ex,
 		afterskip = 24bp plus .2ex,
 		fixskip = true,
@@ -245,7 +245,7 @@ headheight=15pt
 % 设置三节标题格式：黑体小四居左书写，单倍行距，序号与题目间空一个汉字符
 
 \ctexset{subsubsection={
-		format={\heiti \raggedright \zihao{-4}},
+		format={\sffamily \raggedright \zihao{-4}},
 		beforeskip=28bp plus 1ex minus .2ex,
 		afterskip=24bp plus .2ex,
 		fixskip=true,
@@ -478,29 +478,34 @@ headheight=15pt
 
 \RequirePackage{multirow}
 \RequirePackage{booktabs}
-\RequirePackage{makeidx}
+\RequirePackage{imakeidx}
+\indexsetup{
+	firstpagestyle = BJTU@heading,
+	level = \section*,
+	toclevel = section,
+	noclearpage,
+}
 %索引环境
 
-\renewenvironment{theindex}
-{\addcontentsline{toc}{chapter}{索引}
-\if@twocolumn
-	\@restonecolfalse
-	\else
-	\@restonecoltrue
-	\fi
-	\twocolumn[\@makeschapterhead{\indexname}]%
-	\@mkboth{\MakeUppercase\indexname}%
-	{\MakeUppercase\indexname}%
-	\thispagestyle{BJTU@heading}\parindent\z@
-	\parskip\z@ \@plus .3\p@\relax
-	\columnseprule \z@
-	\columnsep 35\p@
-	\let\item\@idxitem}
-{\if@restonecol\onecolumn\else\clearpage\fi}
-\renewcommand\@idxitem{\par\hangindent 40\p@}
-\renewcommand\subitem{\@idxitem \hspace*{20\p@}}
-\renewcommand\subsubitem{\@idxitem \hspace*{30\p@}}
-\renewcommand\indexspace{\par \vskip 10\p@ \@plus5\p@ \@minus3\p@\relax}
+%\renewenvironment{theindex}
+%{\if@twocolumn
+%	\@restonecolfalse
+%	\else
+%	\@restonecoltrue
+%	\fi
+%	\twocolumn[\@makeschapterhead{\indexname}]%
+%	\@mkboth{\MakeUppercase\indexname}%
+%	{\MakeUppercase\indexname}%
+%	\thispagestyle{BJTU@heading}\parindent\z@
+%	\parskip\z@ \@plus .3\p@\relax
+%	\columnseprule \z@
+%	\columnsep 35\p@
+%	\let\item\@idxitem}
+%{\if@restonecol\onecolumn\else\clearpage\fi}
+%\renewcommand\@idxitem{\par\hangindent 40\p@}
+%\renewcommand\subitem{\@idxitem \hspace*{20\p@}}
+%\renewcommand\subsubitem{\@idxitem \hspace*{30\p@}}
+%\renewcommand\indexspace{\par \vskip 10\p@ \@plus5\p@ \@minus3\p@\relax}
 
 
 

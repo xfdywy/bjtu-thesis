@@ -1,5 +1,66 @@
 \begin{englishabstract}
-	English Abstract.
+Imaging technology has been widely used in military, industrial, civil and many
+other fields. However, image will be random motion-blurred because of relative motion
+between the scene and the time-delay imaging system, aero-optical effect or other seasons, and imaging performance of the machine vision system will be affected. Image
+restoration algorithm is an effective way to improve quality of image. However, iteration
+is used, so the shortcomings of the most widely used blind restoration algorithms are large
+amount of computation and time-consuming, and it is difficult to meet the fast restoration
+requirements in many fields. Linear restoration algorithms have not been practical application because of the limitations of the existing image quality evaluation function or
+method. Therefore, establishing a new image quality evaluation model and combined
+with the linear restoration algorithm is an effective means of rapidly restoring random
+motion-blurred image.
+The subject of “a fast restoration method for random motion-blurred image based
+on DOTF”aims to strictly derive random motion Dynamic Optical Transfer Function
+(DOTF) model, and use it to accurately describe the degradation law of random motionblurred image, and then a restoration method which extract DOTF from the blurred image
+and combine with the linear filter algorithm is proposed. Iterative operation can be avoided in this restoration method, and the degraded image can be restored rapidly. These
+researches offer a technology scheme for rapidly restoring random motion-blurred image, and it is good for improving real-time imaging performance of time-delay imaging
+system.
+The main research contents include:
+
+\begin{enumerate}
+\item In order to solve the problem of the existing image quality evaluation function
+or methods can’t be used for rapidly restoring random motion-blurred image, a new evaluation function was built. Firstly, we rigorously derived Random motion DOTF models
+in the space domain and in the spatial frequency domain separately, and they are mutual
+verified because the two DOTF models are exactly the same; secondly, Using our DOTF model, we rigorously derived previously known DOTF expressions for static, uniform
+motion and high frequency harmonic vibration, and according to the displacement function of the motion image is no limits to any motion type, our DOTF model can be
+developed for random motion was verified; at last, by strictly derivation, we found that
+our DOTF model is the Fourier transform of the existing aero-optical point spread function, it is therefore concluded that our DOTF model can be also applied to describe the
+degradation rules of aero-optical random motion-blurred image.
+
+\item The existing blind restoration methods have the characteristics of large computation and long operation time, in order to solve these problems, a fast restoration method
+for random motion-blurred image was proposed. Firstly, the spectrum model of degraded
+image was strictly derived, secondly, based on the border added and background equivalent static properties of the guide part of the degraded image, a restoration method of
+extracting DOTF from the guide part of the degraded image and combining with the linear filter algorithms was proposed; at last, our restoration method was simulated, the
+correlation coefficient between the restored image and original image is 1 proves the effectiveness of our method.
+
+\item The rules of error impacts of our methods effect quality of the restoration
+image were analyzed. Restoration models were built for the background is not uniform,
+the image sensor has dark current, and there is random noise during imaging separately,
+and the restoration method was simulated for the different models. The simulation results
+show that: for nonuniform background, quality of the restoration image will be degraded
+with increasing of the contrast of the background; for constant dark current, quality of
+the restoration image will be unchanged as long as the dark current subtracted from the
+degraded image during the restoration process; for random noise, quality of the restoration
+image will be declined with increasing of the noise intensity. These results suggest that in
+order to get a high quality restoration image, a background with low contrast and low noise
+intensity will be chosen, and the dark current need to be subtracted from the degraded
+image during restoration.
+
+ \item The fast restoration method and the related theories are verified by experiments. Firstly, according to the measurement DOTF curves are agree to the theoretical
+ ones at the same motion parameters, and the changing law of the DOTF curves in the
+ spatial frequency direction with the change of velocity is agree to the theoretical result,
+ the effectiveness of our DOTF model were verified; Secondly, secondly, according to
+ the correlation coefficient between the blurred image degraded by software and the real
+ degraded one is 0.9979 and the correlation coefficient between the blurred image with a
+ Synchronous motion background and the one without Synchronous motion background is
+ 0.9994, the border added and the background equivalent static properties were verified; at
+ last, The blurred images were restored by our restoration method and the existing ones, for
+ quality of the restoration image, the GMG and LS of the images restored by our method
+ are 5.77 times more than those of the images restored by the existing methods, and for
+ operation time, the cost was cut nearly 90% by our method, it is therefore concluded that
+ the advantages of our restoration method are not only improving the restoration quality,
+ but also increasing the operation speed nearly one order of magnitude
+\end{enumerate}
 	
-	\englishkeywords{Hello; World}
+\englishkeywords{Image restoration; DOTF; Random motion; Fast algorithm}
 \end{englishabstract}
